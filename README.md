@@ -66,45 +66,43 @@ Deployed the following resources:
 #### 1. SQL Injection Attack
 - Accessed the web app login page and used the payload:  
  
-  <img src="https://i.imgur.com/wNmxRrA.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/Zo8SWGQ.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/sGNQKcf.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
 
 #### 2. Command Injection Attack
 - Injected a command in the username field to trigger the creation of a JSON object.
 - The JSON object contained AWS CLI credentials.
 
-  ![Command Injection Execution & JSON Object Generation](Insert_screenshot_here)
-  <img src="https://i.imgur.com/wNmxRrA.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
-
+  <img src="https://i.imgur.com/h56y01U.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  
 ---
 
 ### Step 3: Credential Extraction and Utilization
 #### 1. Accessing the JSON Object
 - Retrieved the JSON file containing AWS credentials via the web application URL.
 
-  ![Accessing JSON File](Insert_screenshot_here)
-  <img src="https://i.imgur.com/wNmxRrA.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/XJMYS4T.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
 
 #### 2. Environment Setup and Credential Download
 - Set up environment variables for AWS CLI.
 - Used `wget` to download the credentials file.
 - Verified the file content using `cat`.
 
-  ![Terminal Commands & Outputs](Insert_screenshot_here)
-  <img src="https://i.imgur.com/wNmxRrA.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/0JgxMH3.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/D5J6hjc.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
 
 #### 3. AWS CLI Profile Creation
 - Created a new AWS CLI profile using the extracted credentials.
 - Successfully connected to the S3 bucket using this profile.
 
-  ![AWS CLI Profile Creation & S3 Access](Insert_screenshot_here)
-  <img src="https://i.imgur.com/wNmxRrA.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/B6obqiR.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
 
 #### 4. S3 File Retrieval
 - Downloaded the target file from the S3 bucket.
 - Verified its content using terminal commands.
-
-  ![S3 File Download & Verification](Insert_screenshot_here)
-  <img src="https://i.imgur.com/wNmxRrA.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  
+  <img src="https://i.imgur.com/UgAXuHS.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/kWi2H6o.png.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
 
 ---
 
@@ -112,21 +110,22 @@ Deployed the following resources:
 #### 1. Initial Findings Review
 - Logged into AWS GuardDuty and reviewed the initial findings that recorded the exploitation events.
 
-  ![GuardDuty Findings Overview](Insert_screenshot_here)
-  <img src="https://i.imgur.com/wNmxRrA.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/hxCqVNP.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/e3W6pCt.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/VWY4QT1.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
 
 #### 2. Malware Detection Setup
 - Enabled malware detection for the S3 bucket.
 - Uploaded a sample malware file (EICAR) to test detection.
 
-  ![Malware Detection Setup & Sample File Upload](Insert_screenshot_here)
-  <img src="https://i.imgur.com/wNmxRrA.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/JxBAqH9.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/S01grzH.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/NGMeF5p.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
 
 #### 3. Final Findings Verification
 - Revisited AWS GuardDuty to observe updated findings showing the detection of the sample malware.
 
-  ![GuardDuty Updated Findings](Insert_screenshot_here)
-  <img src="https://i.imgur.com/wNmxRrA.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+  <img src="https://i.imgur.com/ShNFSah.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
 
 
 <h2>Key Learnings</h2>
